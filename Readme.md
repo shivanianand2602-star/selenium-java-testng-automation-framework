@@ -8,7 +8,8 @@
 
 A **modular and maintainable automation framework** for web application testing using **Selenium WebDriver, Java, TestNG, and Maven**. This framework supports **cross-browser testing, headless execution**, and integrates **utility classes** for Excel, CSV, JSON handling, logging, and reporting.  
 
-This project is part of my **automation testing portfolio**.
+This project is part of my **QA Automation Portfolio** and was built independently to demonstrate real-world automation framework design.
+
 
 ---
 
@@ -20,6 +21,7 @@ This project is part of my **automation testing portfolio**.
 - **Maven** (for build management and dependency handling)  
 - **ExtentReports** (for test reporting)  
 - **LambdaTest** (optional cross-browser cloud testing)
+- GitHub Actions (CI execution)
 
 ---
 
@@ -53,11 +55,12 @@ automationtask/
 - Headless execution for CI/CD pipelines  
 - Modular Page Object Model (POM) structure  
 - Retry failed tests automatically using **TestNG listeners**  
-- Utility classes for:
+- Utility support for:
   - Excel, CSV, JSON reading/writing  
   - Logging  
   - Extent report generation  
 - Supports environment-specific configuration via `Env.java`
+-  CI execution using GitHub Actions
 
 ---
 
@@ -94,5 +97,7 @@ This project demonstrates:
 - Proficiency in Java, TestNG, Maven
 - Writing reusable, maintainable test frameworks
 - Ability to integrate reporting and utilities
+- Practical application of QA automation best practices
+
 
 
