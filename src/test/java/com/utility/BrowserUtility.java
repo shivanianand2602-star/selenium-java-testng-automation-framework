@@ -154,22 +154,27 @@ public abstract class BrowserUtility {
 	}
 	
 	public String takeScreenShot(String name) {
-		TakesScreenshot screenshot = (TakesScreenshot)driver.get();
-		
-		File screenshotData = screenshot.getScreenshotAs(OutputType.FILE);
-		
-		Date date = new Date();
-		SimpleDateFormat format = new SimpleDateFormat("HH-mm-ss");
-		String timeStamp = format.format(date);
-		String path =  "/screenshots/" + name + "-" + timeStamp + ".png";
-		
-		File screenshotFile = new File(path);
-		try {
-			FileUtils.copyFile(screenshotData, screenshotFile);
-		} catch (IOException e) {
-			
-			e.printStackTrace();
-		}
-		return path;
+	    TakesScreenshot screenshot = (TakesScreenshot) driver.get();
+	    File screenshotData = screenshot.getScreenshotAs(OutputType.FILE);
+
+	    String projectPath = System.getProperty("user.dir");
+	    String screenshotDir = projectPath + File.separator + "screenshots";
+
+	    File dir = new File(screenshotDir);
+	    if (!dir.exists()) {
+	        dir.mkdirs();
+	    }
+
+	    String timeStamp = new SimpleDateFormat("HH-mm-ss").format(new Date());
+	    String path = screenshotDir + File.separator + name + "-" + timeStamp + ".png";
+
+	    try {
+	        FileUtils.copyFile(screenshotData, new File(path));
+	        logger.info("Screenshot saved at: " + path);
+	    } catch (IOException e) {
+	        logger.error("Failed to save screenshot", e);
+	    }
+	    return path;
 	}
+
 }
