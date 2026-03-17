@@ -1,6 +1,32 @@
-/target/
-/test-output/
-/screenshots/
-/logs/
-/report.html
+# Maven
+target/
+*.class
+
+# Eclipse IDE files (should never be committed)
+.settings/
+.classpath
+.project
+.metadata/
+bin/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# VS Code
+.vscode/
+
+# OS files
 .DS_Store
+Thumbs.db
+
+# Test output
+test-output/
+logs/
+screenshots/
+report.html
+
+# Environment / secrets
+config/local.properties
