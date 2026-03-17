@@ -1,14 +1,14 @@
 {
-	"data" :[
-		{
-			"emailAddress": "pomos42870@kudimi.com",
-			"password": "password"
-		},
-		{
-			"emailAddress": "test23@gmail.com",
-			"password": "password"
-		}
-	]
-	
-	
+  "data": [
+    {
+      "emailAddress": "pomos42870@kudimi.com",
+      "password": "password",
+      "expectedName": "Shivani Anand"
+    },
+    {
+      "emailAddress": "test23@gmail.com",
+      "password": "password",
+      "expectedName": "Tom White"
+    }
+  ]
 }
