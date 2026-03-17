@@ -25,7 +25,7 @@ public final class LoginTest extends TestBase{
 			"e2e"}, dataProviderClass = com.ui.dataprovider.LoginDataProvider.class, dataProvider = "LoginTestDataProvider")
 	public void loginTest(User user) throws InterruptedException  {
 				
-		assertEquals(homepage.goToLoginPage().doLoginWith(user.getEmailAddress(), user.getPassword()).getUserName(), "Shivani Anand");
+		assertEquals(homepage.goToLoginPage().doLoginWith(user.getEmailAddress(), user.getPassword()).getUserName(), user.getExpectedName());
 		
 	}
 /*	
