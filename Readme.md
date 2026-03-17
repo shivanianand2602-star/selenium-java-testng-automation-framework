@@ -4,6 +4,7 @@
 [![Maven](https://img.shields.io/badge/Maven-3.9.11-blue)](https://maven.apache.org/)
 [![Selenium](https://img.shields.io/badge/Selenium-WebDriver-green)](https://www.selenium.dev/)
 [![TestNG](https://img.shields.io/badge/TestNG-7.8.0-lightgrey)](https://testng.org/)
+[![CI](https://github.com/shivanianand2602-star/selenium-java-testng-automation-framework/actions/workflows/maven.yml/badge.svg)](https://github.com/shivanianand2602-star/selenium-java-testng-automation-framework/actions/workflows/maven.yml)
 
 
 A **modular and maintainable automation framework** for web application testing using **Selenium WebDriver, Java, TestNG, and Maven**. This framework supports **cross-browser testing, headless execution**, and integrates **utility classes** for Excel, CSV, JSON handling, logging, and reporting.  
