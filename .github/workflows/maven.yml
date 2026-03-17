@@ -23,14 +23,14 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Running Test Automation Framework with Maven
+      - name: Run Tests
         run: mvn test -Dbrowser=chrome -DisLambdaTest=false -DisHeadless=true
 
       - name: Upload Test Logs
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: Test logs
+          name: test-logs
           path: logs/
 
       - name: Upload Screenshots
@@ -46,39 +46,3 @@ jobs:
         with:
           name: html-report
           path: report.html
-
-      - name: Test Execution Status
-        if: always()
-        run: echo "Test Execution Completed"        if: always()
-        uses: actions/upload-artifact@v4   # ✅ FIX 3: corrected from v6.0.0
-        with:
-          name: screenshots
-          path: screenshots/
-
-      - name: Upload HTML Report as Artifacts
-        if: always()
-        uses: actions/upload-artifact@v4   # ✅ FIX 3: corrected from v6.0.0
-        with:
-          name: html-report
-          path: report.html
-
-      - name: Test Execution Status
-        if: always()
-        run: echo "Test Execution Completed"
-
-      - name: Copy Report to gh-pages Folder
-        if: always()
-        run: |
-          mkdir -p public/extent-reports
-          cp -f report.html public/extent-reports/index.html
-          mkdir -p public/extent-reports/screenshots
-          cp -R screenshots/ public/extent-reports/screenshots || true
-
-      # ✅ FIX 2: Use GITHUB_TOKEN instead of PAT1 (no secret setup needed)
-      - name: Deploy to GitHub Pages
-        if: always()
-        uses: JamesIves/github-pages-deploy-action@v4.7.6
-        with:
-          folder: public/extent-reports/
-          token: ${{ secrets.GITHUB_TOKEN }}
-          clean: true
