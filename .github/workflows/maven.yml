@@ -1,6 +1,7 @@
 name: Test Automation WorkFlow
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '30 07 * * *'
   push:
@@ -22,19 +23,33 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      # ✅ FIX 1: Run locally in headless mode (no LambdaTest credentials needed in CI)
       - name: Running Test Automation Framework with Maven
         run: mvn test -Dbrowser=chrome -DisLambdaTest=false -DisHeadless=true
 
-      - name: Upload Test logs
+      - name: Upload Test Logs
         if: always()
-        uses: actions/upload-artifact@v4   # ✅ FIX 3: corrected from v6.0.0
+        uses: actions/upload-artifact@v4
         with:
           name: Test logs
           path: logs/
 
-      - name: Upload Screenshots as Artifacts
+      - name: Upload Screenshots
         if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: screenshots/
+
+      - name: Upload HTML Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: html-report
+          path: report.html
+
+      - name: Test Execution Status
+        if: always()
+        run: echo "Test Execution Completed"        if: always()
         uses: actions/upload-artifact@v4   # ✅ FIX 3: corrected from v6.0.0
         with:
           name: screenshots
