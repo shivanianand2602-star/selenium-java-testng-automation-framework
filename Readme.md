@@ -70,7 +70,7 @@ automationtask/
 Clone the repository:
 
 # Clone the repository
-git clone https://github.com/shivanianand2602-star/selenium-java-testng-automation-framework.git
+git clone https://github.com/shivani-anand-qa/selenium-java-testng-automation-framework.git
 cd selenium-java-testng-automation-framework
 
 # Run tests
